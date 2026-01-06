@@ -147,7 +147,7 @@ const AddLead = () => {
                         <label className="form-label fw-bold small">Lead Value</label>
                         <div className="input-group">
                             <input type="number" className="form-control" name="lead_value" onChange={handleChange} />
-                            <span className="input-group-text">$</span>
+                            <span className="input-group-text">₹</span>
                         </div>
                     </div>
                     <div className="mb-3">

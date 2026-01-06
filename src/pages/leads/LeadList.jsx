@@ -145,7 +145,7 @@ const LeadList = () => {
       <div className="card border-0 shadow-sm p-3 h-100">
         <h6 className="text-muted text-uppercase small mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.5px' }}>{title}</h6>
         <h3 className={`mb-0 text-${color}`}>
-          {isMoney ? `$${value.toLocaleString()}` : value}
+          {isMoney ? `₹${value.toLocaleString()}` : value}
         </h3>
       </div>
     </div>
@@ -283,7 +283,7 @@ const LeadList = () => {
                           <span className="badge bg-white text-dark border">{statusLeads.length}</span>
                         </div>
                         <div className="px-3 pb-2">
-                          <small className="text-muted fw-bold">Total: ${statusTotal.toLocaleString()}</small>
+                          <small className="text-muted fw-bold">Total: ₹{statusTotal.toLocaleString()}</small>
                         </div>
 
                         <div className="card-body p-2 d-flex flex-column gap-2 overflow-auto" style={{ maxHeight: 'calc(100vh - 300px)' }}>

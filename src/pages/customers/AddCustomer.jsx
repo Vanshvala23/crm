@@ -106,7 +106,7 @@ const AddCustomer = () => {
                 <input type="text" className="form-control" name="phone" onChange={handleChange} />
               </div>
               <div className="col-md-4">
-                <label className="form-label">VAT / Tax ID</label>
+                <label className="form-label">GST No</label>
                 <input type="text" className="form-control" name="GST" onChange={handleChange} />
               </div>
               <div className="col-md-4">

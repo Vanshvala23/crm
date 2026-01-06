@@ -179,7 +179,7 @@ const CreateProposal = () => {
                                         <option value="18">18%</option>
                                     </select>
                                 </td>
-                                <td className="text-end align-middle fw-bold">${parseFloat(item.amount).toFixed(2)}</td>
+                                <td className="text-end align-middle fw-bold">₹{parseFloat(item.amount).toFixed(2)}</td>
                                 <td className="align-middle"><button type="button" className="btn btn-sm text-danger" onClick={() => removeItem(index)}><FaTrash/></button></td>
                             </tr>
                         ))}
@@ -195,14 +195,14 @@ const CreateProposal = () => {
                         <tbody>
                             <tr>
                                 <td className="text-muted text-end">Sub Total :</td>
-                                <td className="text-end">${subTotal.toFixed(2)}</td>
+                                <td className="text-end">₹{subTotal.toFixed(2)}</td>
                             </tr>
                             <tr>
                                 <td className="text-muted text-end align-middle">Discount :</td>
                                 <td>
                                     <div className="input-group input-group-sm">
                                         <input type="number" className="form-control text-end" value={formData.discount_val} onChange={e => setFormData({...formData, discount_val: e.target.value})} />
-                                        <span className="input-group-text">$</span>
+                                        <span className="input-group-text">₹</span>
                                     </div>
                                 </td>
                             </tr>
@@ -211,13 +211,13 @@ const CreateProposal = () => {
                                 <td>
                                     <div className="input-group input-group-sm">
                                         <input type="number" className="form-control text-end" value={formData.adjustment} onChange={e => setFormData({...formData, adjustment: e.target.value})} />
-                                        <span className="input-group-text">$</span>
+                                        <span className="input-group-text">₹</span>
                                     </div>
                                 </td>
                             </tr>
                             <tr className="fw-bold fs-5">
                                 <td className="text-end text-primary">Total :</td>
-                                <td className="text-end text-primary">${total.toFixed(2)}</td>
+                                <td className="text-end text-primary">₹{total.toFixed(2)}</td>
                             </tr>
                         </tbody>
                     </table>
