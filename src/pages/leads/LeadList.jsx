@@ -154,7 +154,7 @@ const LeadList = () => {
   const totalLeads = leads.length;
   const newLeads = leads.filter(l => l.status === 'New').length;
   const qualifiedLeads = leads.filter(l => l.status === 'Qualified').length;
-  const totalValue = leads.reduce((acc, curr) => acc + (parseFloat(curr.value) || 0), 0);
+  const totalValue = leads.reduce((acc, curr) => acc + (parseFloat(curr.lead_value) || 0), 0);
 
   return (
     <div className="container-fluid">
@@ -248,7 +248,7 @@ const LeadList = () => {
                       <div className="small text-muted">{lead.company}</div>
                     </td>
                     <td><StatusDropdown currentStatus={lead.status} leadId={lead.id} /></td>
-                    <td>{lead.currency} {parseFloat(lead.value).toLocaleString()}</td>
+                    <td>{lead.currency} {parseFloat(lead.lead_value).toLocaleString()}</td>
                     <td>{lead.source}</td>
                     <td>{lead.created_at ? new Date(lead.created_at).toLocaleDateString() : '-'}</td>
                     <td className="text-end pe-4">

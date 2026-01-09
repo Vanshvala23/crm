@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // Matches your backend port
+  baseURL: 'https://crm-backend-ntt0.onrender.com/api', // Matches your backend port
 });
 
 // --- Contacts (Customers) ---

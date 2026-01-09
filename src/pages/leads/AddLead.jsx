@@ -144,12 +144,35 @@ const AddLead = () => {
                         <input type="text" className="form-control" name="phone" onChange={handleChange} />
                     </div>
                     <div className="mb-3">
-                        <label className="form-label fw-bold small">Lead Value</label>
-                        <div className="input-group">
-                            <input type="number" className="form-control" name="lead_value" onChange={handleChange} />
-                            <span className="input-group-text">₹</span>
-                        </div>
-                    </div>
+  <label className="form-label fw-bold small">Lead Value</label>
+  <div className="row g-2">
+    <div className="col-8">
+      <input
+        type="number"
+        className="form-control"
+        name="lead_value"
+        placeholder="0.00"
+        onChange={handleChange}
+      />
+    </div>
+    <div className="col-4">
+      <select
+        className="form-select"
+        name="currency"
+        value={formData.currency}
+        onChange={handleChange}
+      >
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="AUD">AUD</option>
+        <option value="CAD">CAD</option>
+      </select>
+    </div>
+  </div>
+</div>
+
                     <div className="mb-3">
                         <label className="form-label fw-bold small">Company</label>
                         <input type="text" className="form-control" name="company" onChange={handleChange} />

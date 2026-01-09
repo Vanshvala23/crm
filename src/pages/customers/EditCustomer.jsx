@@ -33,7 +33,7 @@ const EditCustomer = () => {
                 email: data.email,
                 phone: data.phone,
                 company: data.company,
-                GST: data.gst_number, // Map gst_number -> GST
+                GST: data.GST, // Map gst_number -> GST
                 website: data.website,
                 selectedGroupId: data.group_id || '',
                 currency: data.currency,
@@ -69,23 +69,40 @@ const EditCustomer = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // 1. Update Contact Details
-      await updateContact(id, formData);
-      
-      // 2. Update Group (Re-assign logic)
-      if (formData.selectedGroupId) {
-        await assignGroupToCustomer(id, [formData.selectedGroupId]);
-      }
+  e.preventDefault();
 
-      alert('Customer Updated Successfully!');
-      navigate('/customers');
-    } catch (error) {
-      console.error(error);
-      alert('Error updating customer');
+  try {
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      address: formData.address,
+      city: formData.city,
+      state: formData.state,
+      country: formData.country,
+      zipcode: formData.zipcode,
+      website: formData.website,
+      currency: formData.currency,
+      language: formData.language,
+      GST: formData.GST
+    };
+
+    // 1️⃣ Update contact
+    await updateContact(id, payload);
+
+    // 2️⃣ Update group mapping
+    if (formData.selectedGroupId) {
+      await assignGroupToCustomer(id, [formData.selectedGroupId]);
     }
-  };
+
+    alert("Customer Updated Successfully!");
+    navigate("/customers");
+  } catch (err) {
+    console.error(err);
+    alert("Failed to update customer");
+  }
+};
+
 
   if (loading) return <div className="text-center py-5"><FaSpinner className="spinner-border text-primary" /></div>;
 

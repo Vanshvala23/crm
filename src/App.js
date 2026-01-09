@@ -24,7 +24,7 @@ function App() {
             <Route index element={<CustomerList />} />
             <Route path="add" element={<AddCustomer />} />
             <Route path="import" element={<ImportCustomers />} />
-            <Route path="edit/:id" element={<EditCustomer />} /> 
+            <Route path="/customers/edit/:id" element={<EditCustomer />} /> 
           </Route>
 
           <Route path="leads">
